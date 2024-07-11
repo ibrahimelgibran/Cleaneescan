@@ -1,7 +1,3 @@
-<p align="center">
-  <img src=".github/object-detection.jpg" alt="Nest Logo" />
-</p>
-
 ## Description
 
 This application detects objects using TensorFlow.js, the CocoSSD model is already trained, it has 80 different classes for detection, such as Person, Cat, Dog, Cell Phone, Chair, etc.
@@ -36,6 +32,3 @@ $ npm run preview
 - **Development mode**: http://localhost:3000
 - **Production mode**: http://localhost:4173
 
-## License
-
-[MIT License](LICENSE).
