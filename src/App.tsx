@@ -8,12 +8,12 @@ import Webcam from 'react-webcam';
 
 import {
   load as cocoSSDLoad,
-  type ObjectDetection,
+  ObjectDetection,
 } from '@tensorflow-models/coco-ssd';
 
 import { drawRect } from './utils/drawRect';
 
-let detectInterval: NodeJS.Timer;
+let detectInterval: NodeJS.Timeout | undefined;
 
 const App = () => {
   const webcamRef = useRef<Webcam>(null);
@@ -23,7 +23,7 @@ const App = () => {
     // Load network
     const net = await cocoSSDLoad();
 
-    //  Loop to detect objects
+    // Loop to detect objects
     detectInterval = setInterval(() => {
       runObjectDetection(net);
     }, 10);
@@ -77,7 +77,11 @@ const App = () => {
     showMyVideo();
     runCoco();
 
-    return () => clearInterval(detectInterval);
+    return () => {
+      if (detectInterval) {
+        clearInterval(detectInterval);
+      }
+    };
   }, []);
 
   return (
