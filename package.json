@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "npm install --legacy-peer-deps && tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix"
   },
@@ -14,7 +14,7 @@
     "@tensorflow/tfjs": "^4.2.0",
     "@tensorflow/tfjs-backend-cpu": "^4.2.0",
     "@tensorflow/tfjs-backend-webgl": "^4.2.0",
-    "@tensorflow/tfjs-converter": "^4.2.0",
+    "@tensorflow/tfjs-converter": "^3.3.0",
     "@tensorflow/tfjs-core": "^4.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
